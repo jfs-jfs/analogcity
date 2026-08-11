@@ -1,0 +1,10 @@
+-I/usr/local/include
+-D_DEFAULT_SOURCE
+-D_XOPEN_SOURCE=600
+-L/usr/local/lib
+-lcursed-tea-ui
+-lcursed-tea
+-lm
+-pthread
+-lncursesw
+-ltinfo 
