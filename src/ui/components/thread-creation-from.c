@@ -107,6 +107,7 @@ void thread_creation_render(const void *uncasted_model,
   struct CtBrush backup = ct_brush();
   struct CtCanvas surface, inner_surface, text_area;
   ct_ccutout_c(canvas, &surface, canvas->max_x - 2, 24);
+  ct_cfill(&surface, L' ');
 
   ct_brush_fg_hex(PINK_COLOR);
   ct_cborder(&surface, &inner_surface);
