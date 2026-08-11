@@ -70,14 +70,20 @@ void board_listing_handler(void *uncasted_model, const struct CtEvent *event) {
       ct_event_send_custom(CUSTOM_EV_DONE, uncasted_model);
       break;
     case L'j':
+      if (model->_loading || model->_loaded_threads == 0)
+        break;
       model->_cursor_at = (model->_cursor_at + 1) % model->_loaded_threads;
       break;
     case L'k':
+      if (model->_loading || model->_loaded_threads == 0)
+        break;
       model->_cursor_at = (model->_cursor_at == 0) ? model->_loaded_threads - 1
                                                    : model->_cursor_at - 1;
       break;
     case L'\n':
     case L'\r':
+      if (model->_loading || model->_loaded_threads == 0)
+        break;
       model->selection = &model->_threads[model->_cursor_at];
       ct_event_send_custom(CUSTOM_EV_DONE, uncasted_model);
       break;
@@ -187,6 +193,7 @@ void board_listing_setup(BoardListing *model, const enum Boards board) {
   model->base.handler = board_listing_handler;
   model->board = board;
   model->_cursor_at = 0;
+  model->_loaded_threads = 0;
   model->selection = NULL;
 
   // Titles

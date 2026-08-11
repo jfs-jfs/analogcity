@@ -82,17 +82,23 @@ void archive_handler(void *uncasted_model, const struct CtEvent *event) {
       break;
 
     case L'k':
+      if (!model->_initialized_entries || model->entries_count == 0)
+        break;
       model->_selection_index = (model->_selection_index == 0)
                                     ? model->entries_count - 1
                                     : model->_selection_index - 1;
       break;
     case L'j':
+      if (!model->_initialized_entries || model->entries_count == 0)
+        break;
       model->_selection_index =
           (model->_selection_index + 1) % model->entries_count;
       break;
 
     case L'\n':
     case L'\r':
+      if (!model->_initialized_entries || model->entries_count == 0)
+        break;
       model->selection = true;
       model->selected_entry = &model->entries[model->_selection_index];
       if (model->_initialized_entry_view)
