@@ -251,24 +251,20 @@ char *add_dialog_colors(const char *text) {
       colored[j++] = 'Z';
       colored[j++] = 'n';
       i += digits;
-    } else if (text[i] == '>' && text[i + 1] == '>') {
-      size_t n = i + 2;
+    } else if (text[i] == '>') {
+      size_t n = i + 1;
       while (n < len && text[n] != '\n')
         n++;
-      if (n < len && text[n] == '\n') {
-        strcpy(&colored[j], "\\Z2\\Zb");
-        j += 6;
-        for (size_t k = i; k <= n; k++)
-          colored[j++] = text[k];
-        colored[j++] = '\\';
-        colored[j++] = 'Z';
-        colored[j++] = 'n';
-        i = n;
-      } else {
-        colored[j++] = text[i];
-        colored[j++] = text[i + 1];
-        i++;
-      }
+      strcpy(&colored[j], "\\Z2\\Zb");
+      j += 6;
+      for (size_t k = i; k < n; k++)
+        colored[j++] = text[k];
+      if (n < len)
+        colored[j++] = '\n';
+      colored[j++] = '\\';
+      colored[j++] = 'Z';
+      colored[j++] = 'n';
+      i = n;
     } else {
       colored[j++] = text[i];
     }
