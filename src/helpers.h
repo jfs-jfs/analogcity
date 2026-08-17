@@ -29,3 +29,5 @@ char *add_dialog_colors(const char *text);
 
 void cwrite_parsed_dialog_colors(struct CtCanvas *canvas, const size_t x,
                                  const size_t y, const wchar_t *text);
+
+size_t count_visual_rows(const wchar_t *text, size_t width);

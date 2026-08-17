@@ -229,6 +229,30 @@ void cwrite_parsed_dialog_colors(struct CtCanvas *canvas, const size_t x,
   ct_brush_from(backup); // always at the end of the line
 }
 
+size_t count_visual_rows(const wchar_t *text, size_t width) {
+  if (NULL == text || L'\0' == *text || 0 == width)
+    return 0;
+
+  size_t rows = 1;
+  size_t column = 0;
+
+  for (const wchar_t *cursor = text; L'\0' != *cursor; cursor++) {
+    if (L'\n' == *cursor) {
+      rows++;
+      column = 0;
+      continue;
+    }
+
+    column++;
+    if (column == width && L'\0' != *(cursor + 1) && L'\n' != *(cursor + 1)) {
+      rows++;
+      column = 0;
+    }
+  }
+
+  return rows;
+}
+
 char *add_dialog_colors(const char *text) {
 
   // Oracle made

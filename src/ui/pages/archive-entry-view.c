@@ -105,6 +105,8 @@ void _draw_entry_file(const ArchiveEntryView *model, struct CtCanvas *canvas) {
   ct_cfill(canvas, L' ');
 
   size_t line_width = canvas->max_x;
+  ((ArchiveEntryView *)model)->_total_lines =
+      count_visual_rows(model->_dynamic_buffer, line_width);
   size_t display_line = 0;
   size_t pos = 0;
 
@@ -161,6 +163,8 @@ void archive_entry_view_render(const void *uncasted_model,
   ct_cwrite_ss(&panel_text_canvas, title_buffer);
 
   // Panel bottom bar
+  ((ArchiveEntryView *)uncasted_model)->_total_lines =
+      count_visual_rows(model->_dynamic_buffer, text_canvas.max_x);
   size_t max_scroll = model->_total_lines > text_canvas.max_y
                           ? model->_total_lines - text_canvas.max_y
                           : 0;

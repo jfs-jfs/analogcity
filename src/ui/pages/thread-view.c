@@ -161,6 +161,9 @@ void thread_view_render(const void *uncasted_model, struct CtCanvas *canvas) {
 
   size_t content_height = thread_canvas.max_y > 5 ? thread_canvas.max_y - 5 : 0;
   ((ThreadView *)uncasted_model)->_view_height = content_height;
+  size_t line_width = thread_canvas.max_x;
+  ((ThreadView *)uncasted_model)->_total_lines =
+      count_visual_rows(model->_dynamic_buffer, line_width);
   size_t scroll_offset = model->_scroll_offset;
   size_t max_scroll = (model->_total_lines > content_height)
                           ? model->_total_lines - content_height
@@ -240,7 +243,6 @@ void thread_view_render(const void *uncasted_model, struct CtCanvas *canvas) {
   ct_cfill(&thread_canvas, L' ');
   // ct_cborder(&thread_canvas, NULL);
 
-  size_t line_width = thread_canvas.max_x;
   size_t display_line = 0;
   size_t pos = 0;
 
