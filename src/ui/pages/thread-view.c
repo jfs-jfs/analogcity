@@ -167,18 +167,20 @@ void thread_view_render(const void *uncasted_model, struct CtCanvas *canvas) {
                           : 0;
   if (scroll_offset > max_scroll)
     scroll_offset = max_scroll;
-  ct_brush_fg_hex(HINT_COLOR);
 
-  if (model->thread.number_of_replies < THREAD_MAX_REPLIES)
-    ct_cwrite_ce(
-        &thread_canvas,
-        L"[ k/j :: Up/Down ] [ r :: Reply ] [ b :: Back ] [ q :: Quit ]");
-  else
-    ct_cwrite_ce(
-        &thread_canvas,
-        L"[ k/j :: Up/Down ] [ MAX REPLIES ] [ b :: Back ] [ q :: Quit ]");
+  if (!model->_show_reply_form) {
+    ct_brush_fg_hex(HINT_COLOR);
+    if (model->thread.number_of_replies < THREAD_MAX_REPLIES)
+      ct_cwrite_ce(
+          &thread_canvas,
+          L"[ k/j :: Up/Down ] [ r :: Reply ] [ b :: Back ] [ q :: Quit ]");
+    else
+      ct_cwrite_ce(
+          &thread_canvas,
+          L"[ k/j :: Up/Down ] [ MAX REPLIES ] [ b :: Back ] [ q :: Quit ]");
+    ct_brush_from(backup);
+  }
   ct_cmargin_y(&thread_canvas, &thread_canvas, 1, 1);
-  ct_brush_from(backup);
 
   ct_brush_bg_hex(BLUE_COLOR);
   ct_brush_fg_hex(DEFAULT_BG_COLOR);
