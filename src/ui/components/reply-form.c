@@ -58,11 +58,11 @@ void reply_form_handler(void *uncasted_model, const struct CtEvent *event) {
         label_input_focus(&model->author_input);
       }
       break;
-    case KEY_F(9):
+    case KEY_F(10):
       // Fire without creating the file
       ct_event_send_custom(CUSTOM_EV_DONE, uncasted_model);
       break;
-    case KEY_F(10):
+    case KEY_F(2):
       if (wcslen(model->reply_input._buffer) <= REPLY_MIN_SIZE) {
         model->_error_author = false;
         model->_error_reply = true;
@@ -121,8 +121,7 @@ void reply_form_render(const void *uncasted_model, struct CtCanvas *canvas) {
   // KEY ACTIONS
   ct_brush_from(backup);
   ct_brush_fg_hex(HINT_COLOR);
-  ct_cwrite_ce(canvas,
-               L"[ TAB :: switch focus ] [ F9 :: cancel ] [ F10 :: submit ]");
+  ct_cwrite_ce(canvas, L"[ TAB :: Focus ] [ F2 :: Submit ] [ F10 :: Cancel ]");
   ct_brush_from(backup);
 }
 
