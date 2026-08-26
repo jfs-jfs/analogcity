@@ -32,10 +32,10 @@ void size_enforcer_render(const void *uncasted_model, struct CtCanvas *canvas) {
 
   wchar_t buffer[120];
   if (canvas->max_x < model->min_x)
-    swprintf(buffer, 120, L"[ TERMINAL TO SLIM :: EXPAND IT %zu COLUMNS ]",
+    swprintf(buffer, 120, L"[ TERMINAL TOO SLIM :: EXPAND IT %zu COLUMNS ]",
              model->min_x - canvas->max_x);
   else
-    swprintf(buffer, 120, L"[ TERMINAL TO SHORT :: EXPAND IT %zu ROWS ]",
+    swprintf(buffer, 120, L"[ TERMINAL TOO SHORT :: EXPAND IT %zu ROWS ]",
              model->min_y - canvas->max_y);
 
   ct_cwrite_cc(canvas, buffer);
