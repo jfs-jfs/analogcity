@@ -8,7 +8,7 @@
 #include "../components/random-title.h"
 #include "../components/tech-title.h"
 #include "../components/thread-creation-from.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stddef.h>
 #include <stdint.h>
 

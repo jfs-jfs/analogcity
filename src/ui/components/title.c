@@ -1,6 +1,6 @@
 #include "title.h"
 #include <cursed-tea/canvas.h>
-#include <cursed-tea/ui/common.h>
+#include <cursed-tea/helpers.h>
 
 #define TITLE_HEIGHT 9
 #define TITLE_WIDTH 6 * 9
@@ -26,7 +26,7 @@ void title_render(const void *uncasted_model, struct CtCanvas *canvas) {
 }
 
 void title_setup(Title *model) {
-  model->base.cleanup = _empty_cleanup;
-  model->base.handler = _empty_handler;
+  model->base.cleanup = ct_empty_cleanup;
+  model->base.handler = ct_empty_handler;
   model->base.render = title_render;
 }

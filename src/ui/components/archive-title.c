@@ -1,8 +1,8 @@
 #include "archive-title.h"
 #include <cursed-tea/canvas-write.h>
 #include <cursed-tea/canvas.h>
+#include <cursed-tea/helpers.h>
 #include <cursed-tea/logger.h>
-#include <cursed-tea/ui/common.h>
 #include <stddef.h>
 #include <wchar.h>
 
@@ -37,7 +37,7 @@ void archive_title_render(const void *uncasted_model, struct CtCanvas *canvas) {
 }
 
 void archive_title_setup(ArchiveTitle *model) {
-  model->base.cleanup = _empty_cleanup;
-  model->base.handler = _empty_handler;
+  model->base.cleanup = ct_empty_cleanup;
+  model->base.handler = ct_empty_handler;
   model->base.render = archive_title_render;
 }

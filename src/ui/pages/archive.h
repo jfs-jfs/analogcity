@@ -4,7 +4,7 @@
 #include "../../helpers.h"
 #include "../components/column.h"
 #include "../pages/archive-entry-view.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stddef.h>
 #include <wchar.h>
 

@@ -5,7 +5,8 @@
 #include "../components/growing-vline.h"
 #include "../components/title.h"
 
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
+
 typedef struct WelcomePage {
   struct CtModel base;
   GrowingVLine line1, line2;

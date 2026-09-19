@@ -1,8 +1,8 @@
 #include "ui/components/size-enforcer.h"
 #include "ui/root.h"
 #include "ui/style.h"
+#include <cursed-tea.h>
 #include <cursed-tea/application.h>
-#include <cursed-tea/core.h>
 #include <cursed-tea/logger.h>
 
 int main() {

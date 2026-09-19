@@ -2,7 +2,7 @@
 
 #include "../../config.h"
 #include "../components/column.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stddef.h>
 #include <wchar.h>
 

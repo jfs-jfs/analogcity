@@ -1,11 +1,10 @@
 #include "fader.h"
 #include "events.h"
+#include <cursed-tea.h>
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas.h>
-#include <cursed-tea/core.h>
 #include <cursed-tea/event.h>
 #include <cursed-tea/logger.h>
-#include <cursed-tea/style/brush.h>
-#include <cursed-tea/ui/common.h>
 
 #define FADER_STEPS 10
 

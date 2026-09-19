@@ -1,6 +1,5 @@
 #pragma once
-#include <cursed-tea/core.h>
-#include <cursed-tea/style/brush.h>
+#include <cursed-tea.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>

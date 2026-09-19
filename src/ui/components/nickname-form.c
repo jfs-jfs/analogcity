@@ -2,13 +2,13 @@
 #include "../style.h"
 #include "events.h"
 #include "label-input.h"
+#include <cursed-tea/border.h>
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas-write.h>
 #include <cursed-tea/canvas.h>
 #include <cursed-tea/event.h>
 #include <cursed-tea/helpers.h>
 #include <cursed-tea/layout.h>
-#include <cursed-tea/style/border.h>
-#include <cursed-tea/style/brush.h>
 #include <ncurses.h>
 #include <wchar.h>
 

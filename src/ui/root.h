@@ -2,9 +2,7 @@
 
 #include "pages/home.h"
 #include "pages/welcome.h"
-#include <cursed-tea/core.h>
-#include <cursed-tea/ui.h>
-#include <cursed-tea/ui/size-guard.h>
+#include <cursed-tea.h>
 #include <stddef.h>
 
 #define MIN_UI_X_SIZE 95

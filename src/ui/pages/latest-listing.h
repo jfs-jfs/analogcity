@@ -3,7 +3,7 @@
 #include "../../config.h"
 #include "../../helpers.h"
 #include "../components/latest-title.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stddef.h>
 #include <stdint.h>
 

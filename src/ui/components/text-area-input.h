@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../config.h"
-#include <cursed-tea/core.h>
-#include <cursed-tea/style/brush.h>
+#include <cursed-tea.h>
+#include <cursed-tea/brush.h>
 #include <stddef.h>
 #include <wchar.h>
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stddef.h>
 typedef struct ArchiveTitle {
   struct CtModel base;

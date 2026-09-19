@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 
 typedef struct AnsiRenderer {
   struct CtModel base;

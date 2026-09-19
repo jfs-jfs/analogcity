@@ -1,9 +1,9 @@
 #include "ansi-renderer.h"
 #include "../style.h"
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas.h>
+#include <cursed-tea/helpers.h>
 #include <cursed-tea/logger.h>
-#include <cursed-tea/style/brush.h>
-#include <cursed-tea/ui/common.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -111,7 +111,7 @@ void ansi_renderer_render(const void *uncasted_model, struct CtCanvas *canvas) {
 void ansi_renderer_setup(AnsiRenderer *model, const char *filename) {
   model->base.cleanup = ansi_renderer_cleanup;
   model->base.render = ansi_renderer_render;
-  model->base.handler = _empty_handler;
+  model->base.handler = ct_empty_handler;
 
   model->_ansi_buffer = NULL;
   FILE *fp = fopen(filename, "rb");

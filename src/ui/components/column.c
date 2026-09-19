@@ -1,10 +1,10 @@
 #include "column.h"
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas-write.h>
 #include <cursed-tea/canvas.h>
 #include <cursed-tea/event.h>
+#include <cursed-tea/helpers.h>
 #include <cursed-tea/logger.h>
-#include <cursed-tea/style/brush.h>
-#include <cursed-tea/ui/common.h>
 #include <ncurses.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -65,7 +65,7 @@ void column_handler(void *uncasted_model, const struct CtEvent *event) {
 }
 
 void column_setup(Column *model) {
-  model->base.cleanup = _empty_cleanup;
+  model->base.cleanup = ct_empty_cleanup;
   // model->base.handler = _empty_handler;
   model->base.handler = column_handler;
   model->base.render = column_render;

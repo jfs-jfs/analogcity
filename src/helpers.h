@@ -1,7 +1,7 @@
 #pragma once
 
 #include "config.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <wchar.h>
 
 typedef struct ThreadInfo {

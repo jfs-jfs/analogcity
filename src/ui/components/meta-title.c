@@ -1,9 +1,9 @@
 #include "meta-title.h"
 #include "../style.h"
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas-write.h>
 #include <cursed-tea/canvas.h>
-#include <cursed-tea/style/brush.h>
-#include <cursed-tea/ui/common.h>
+#include <cursed-tea/helpers.h>
 #include <stddef.h>
 #include <wchar.h>
 
@@ -48,7 +48,7 @@ void meta_title_render(const void *uncasted_model, struct CtCanvas *canvas) {
 }
 
 void meta_title_setup(MetaTitle *model) {
-  model->base.cleanup = _empty_cleanup;
-  model->base.handler = _empty_handler;
+  model->base.cleanup = ct_empty_cleanup;
+  model->base.handler = ct_empty_handler;
   model->base.render = meta_title_render;
 }

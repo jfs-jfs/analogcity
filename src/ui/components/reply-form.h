@@ -3,7 +3,7 @@
 #include "../../helpers.h"
 #include "label-input.h"
 #include "text-area-input.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stdbool.h>
 #include <wchar.h>
 

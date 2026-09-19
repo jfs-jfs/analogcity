@@ -2,7 +2,7 @@
 
 #include "label-input.h"
 #include "text-area-input.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stdbool.h>
 
 typedef struct ThreadCreationFrom {

@@ -8,7 +8,7 @@
 #include "../components/random-title.h"
 #include "../components/reply-form.h"
 #include "../components/tech-title.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <stdbool.h>
 #include <wchar.h>
 

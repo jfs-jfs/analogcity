@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../components/title.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 
 enum InitialMenuOption {
   // OTHERS

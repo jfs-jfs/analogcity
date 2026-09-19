@@ -1,17 +1,17 @@
 #include "text-area-input.h"
 #include "../style.h"
 #include "events.h"
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas-write.h>
 #include <cursed-tea/canvas.h>
 #include <cursed-tea/event.h>
 #include <cursed-tea/layout.h>
-#include <cursed-tea/style/brush.h>
 #include <stddef.h>
 #include <wchar.h>
 
-static void pos_to_display(const wchar_t *buf, size_t buf_len, size_t target_pos,
-                           size_t line_width, size_t *out_line,
-                           size_t *out_col) {
+static void pos_to_display(const wchar_t *buf, size_t buf_len,
+                           size_t target_pos, size_t line_width,
+                           size_t *out_line, size_t *out_col) {
   size_t line = 0;
   size_t col = 0;
   for (size_t pos = 0; pos < target_pos && pos < buf_len;) {
@@ -102,8 +102,7 @@ void textarea_handler(void *uncasted_model, const struct CtEvent *event) {
     size_t cl, cc;
     pos_to_display(model->_buffer, buffer_length, model->_caret_pos,
                    model->_line_width, &cl, &cc);
-    size_t target_line =
-        event->key == KEY_UP ? (cl > 0 ? cl - 1 : 0) : cl + 1;
+    size_t target_line = event->key == KEY_UP ? (cl > 0 ? cl - 1 : 0) : cl + 1;
     model->_caret_pos = display_to_pos(model->_buffer, buffer_length,
                                        model->_line_width, target_line, cc);
     break;
@@ -232,8 +231,7 @@ void textarea_render(const void *uncasted_model, struct CtCanvas *canvas) {
     struct CtBrush saved = ct_brush();
     ct_brush_fg(model->input_background.r, model->input_background.g,
                 model->input_background.b);
-    ct_brush_bg(model->foreground.r, model->foreground.g,
-                model->foreground.b);
+    ct_brush_bg(model->foreground.r, model->foreground.g, model->foreground.b);
     ct_cwrite(&input, caret_column, caret_line - scroll_offset, L" ");
     ct_brush_from(saved);
   }

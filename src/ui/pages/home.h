@@ -9,7 +9,7 @@
 #include "initial-menu.h"
 #include "latest-listing.h"
 #include "thread-view.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 
 enum HomePageState {
   HP_MENU,

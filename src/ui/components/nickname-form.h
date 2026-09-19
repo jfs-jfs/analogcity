@@ -1,7 +1,7 @@
 #pragma once
 
 #include "label-input.h"
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 #include <wchar.h>
 
 typedef struct NicknameForm {

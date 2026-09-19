@@ -3,8 +3,8 @@
 #include <cursed-tea/canvas-write.h>
 #include <cursed-tea/canvas.h>
 #include <cursed-tea/event.h>
+#include <cursed-tea/helpers.h>
 #include <cursed-tea/logger.h>
-#include <cursed-tea/ui/common.h>
 #include <stddef.h>
 
 #define LINE_CHAR L'┃'
@@ -51,7 +51,7 @@ void growing_vline_render(const void *uncasted_model, struct CtCanvas *canvas) {
 
 void growing_vline_setup(GrowingVLine *model, const size_t tick_speed_ms,
                          const enum GrowVLineDirection dir) {
-  model->base.cleanup = _empty_cleanup;
+  model->base.cleanup = ct_empty_cleanup;
   model->base.render = growing_vline_render;
   model->base.handler = growing_vline_handler;
 

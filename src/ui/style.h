@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cursed-tea/core.h>
+#include <cursed-tea.h>
 
 #define DEFAULT_BG_COLOR "#141414"
 #define DEFAULT_FG_COLOR "#B0B0B0"

@@ -1,8 +1,8 @@
 #include "style.h"
 #include <assert.h>
+#include <cursed-tea/brush.h>
 #include <cursed-tea/canvas.h>
 #include <cursed-tea/event.h>
-#include <cursed-tea/style/brush.h>
 
 void stylepass_cleanup(void *uncasted_model) {
   StylePass *model = uncasted_model;

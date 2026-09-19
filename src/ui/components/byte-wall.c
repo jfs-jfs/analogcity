@@ -2,8 +2,8 @@
 #include "events.h"
 #include <cursed-tea/canvas.h>
 #include <cursed-tea/event.h>
+#include <cursed-tea/helpers.h>
 #include <cursed-tea/layout.h>
-#include <cursed-tea/ui/common.h>
 #include <stddef.h>
 
 #define BYTES_HEIGHT 5
@@ -51,7 +51,7 @@ void byte_wall_render(const void *uncasted_model, struct CtCanvas *canvas) {
 
 void byte_wall_setup(ByteWall *model, const size_t speed_ms) {
 
-  model->base.cleanup = _empty_cleanup;
+  model->base.cleanup = ct_empty_cleanup;
   model->base.handler = byte_wall_handler;
   model->base.render = byte_wall_render;
 
